@@ -1,2 +1,2 @@
-# website_template
-Basic Template for Website design. Includes JQuery, Bootstrap and index.html
+# Soundcontrol Javascript Webplayer
+This webplayer is custom made to control background audio during my D&D games.
