@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
+	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 </head>
 
 <body class="container">
@@ -38,35 +39,58 @@
 	</audio>
 
 	<div class="row">
-		<div class="col-sm-4">
-			<button onclick="playTrack('combat')" class="btn btn-lg btn-block  btn-danger">Combat&nbsp;<span class="volume">0</span></button>
+		<div class="col-sm-12">
+			<h1 class="text-center">Background Audio</h1>
 		</div>
 		<div class="col-sm-4">
-			<button onclick="playTrack('day')" class="btn btn-lg btn-block  btn-info">Day&nbsp;<span class="volume">0</span></button>
+			<button id="combatButton" onclick="playTrack('combat')" class="btn btn-lg btn-block  btn-danger">
+				Combat&nbsp;
+				<span id="combatVolume"></span>
+			</button>
 		</div>
 		<div class="col-sm-4">
-			<button onclick="playTrack('dungeons')" class="btn btn-lg btn-block  btn-brown">Dungeons&nbsp;<span class="volume">0</span></button>
+			<button id="dayButton" onclick="playTrack('day')" class="btn btn-lg btn-block  btn-info">
+				Day&nbsp;
+				<span id="dayVolume"></span>
+			</button>
 		</div>
 		<div class="col-sm-4">
-			<button onclick="playTrack('forest')" class="btn btn-lg btn-block  btn-success">Forest&nbsp;<span class="volume">0</span></button>
+			<button id="dungeonsButton" onclick="playTrack('dungeons')" class="btn btn-lg btn-block  btn-brown">Dungeons&nbsp;
+				<span id="dungeonsVolume"></span>
+			</button>
 		</div>
 		<div class="col-sm-4">
-			<button onclick="playTrack('night')" class="btn btn-lg btn-block  btn-dark">Night&nbsp;<span class="volume">0</span></button>
+			<button id="forestButton" onclick="playTrack('forest')" class="btn btn-lg btn-block  btn-success">Forest&nbsp;
+				<span id="forestVolume"></span>
+			</button>
 		</div>
 		<div class="col-sm-4">
-			<button onclick="playTrack('rain')" class="btn btn-lg btn-block  btn-secondary">Rain&nbsp;<span class="volume">0</span></button>
+			<button id="nightButton" onclick="playTrack('night')" class="btn btn-lg btn-block  btn-dark">Night&nbsp;
+				<span id="nightVolume"></span>
+			</button>
 		</div>
 		<div class="col-sm-4">
-			<button onclick="playTrack('taverns')" class="btn btn-lg btn-block  btn-magenta">Taverns&nbsp;<span class="volume">0</span></button>
+			<button id="rainButton" onclick="playTrack('rain')" class="btn btn-lg btn-block  btn-secondary">Rain&nbsp;
+				<span id="rainVolume"></span>
+			</button>
 		</div>
 		<div class="col-sm-4">
-			<button onclick="playTrack('towns')" class="btn btn-lg btn-block  btn-warning">Towns&nbsp;<span class="volume">0</span></button>
+			<button id="tavernsButton" onclick="playTrack('taverns')" class="btn btn-lg btn-block  btn-magenta">Taverns&nbsp;
+				<span id="tavernsVolume"></span>
+			</button>
 		</div>
 		<div class="col-sm-4">
-			<button onclick="playTrack('taverns2')" class="btn btn-lg btn-block  btn-magenta">Taverns II&nbsp;<span class="volume">0</span></button>
+			<button id="townsButton" onclick="playTrack('towns')" class="btn btn-lg btn-block  btn-warning">Towns&nbsp;
+				<span id="townsVolume"></span>
+			</button>
+		</div>
+		<div class="col-sm-4">
+			<button id="taverns2Button" onclick="playTrack('taverns2')" class="btn btn-lg btn-block  btn-magenta">Taverns II&nbsp;
+				<span id="taverns2Volume"></span>
+			</button>
 		</div>
 	</div>
-	
+
 
 	<script src="js/lib/jquery-3.2.1.min.js"></script>
 	<script src="js/main.js"></script>

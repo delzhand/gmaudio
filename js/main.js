@@ -24,6 +24,12 @@ function init(){
     });
 }
 
+var noVolume = '<i class="fas fa-volume-off"></i>';
+var halfVolume = '<i class="fas fa-volume-down"></i>';
+var fullVolume = '<i class="fas fa-volume-up"></i>';
+
+var frameCounter = 0;
+
 /**
  * Update handler, will handle audio automation animation and easing
  */
@@ -33,6 +39,22 @@ function update(){
         if(Math.abs(diff) < 0.1) track.volume = track.targetVolume;
         track.volume = constrain(track.volume + diff * 0.1, 0, 1);
     });
+    frameCounter ++;
+    if(frameCounter > 1){
+        frameCounter = 0;
+        updateIcons();
+    }
+}
+
+function updateIcons(){
+    $('audio').each(function(index, track){
+        //Set icon according to track volume
+        var volumeID = '#' + track.id.replace(/Sound/g, '') + "Volume";
+        var icon = track.volume < 0.1 ? noVolume : track.volume < 0.5 ? halfVolume : fullVolume;
+        var opacity = track.volume * 0.8 + 0.2;
+        var fontweight = track.volume * 400 + 400;
+        $(volumeID).html(icon).attr('style', 'opacity: ' + opacity + ";font-weight: " + fontweight);
+    });              
 }
 
 /**
