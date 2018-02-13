@@ -46,6 +46,9 @@ function update(){
     }
 }
 
+/**
+ * Updates the icons, this is done a little les frequently to prevent DOM updates
+ */
 function updateIcons(){
     $('audio').each(function(index, track){
         //Set icon according to track volume
