@@ -15,7 +15,7 @@
 	<audio loop id="daySound">
 		<source src="data/DND/day.mp3" preload="auto">
 	</audio>
-	<audio loop id="nightSound">
+	<audio loop id="dungeonsSound">
 		<source src="data/DND/dungeons.mp3" preload="auto">
 	</audio>
 	<audio loop id="forestSound">
@@ -39,31 +39,31 @@
 
 	<div class="row">
 		<div class="col-sm-4">
-			<button class="btn btn-lg btn-block  btn-danger">Combat</button>
+			<button onclick="playTrack('combat')" class="btn btn-lg btn-block  btn-danger">Combat&nbsp;<span class="volume">0</span></button>
 		</div>
 		<div class="col-sm-4">
-			<button class="btn btn-lg btn-block  btn-info">Day</button>
+			<button onclick="playTrack('day')" class="btn btn-lg btn-block  btn-info">Day&nbsp;<span class="volume">0</span></button>
 		</div>
 		<div class="col-sm-4">
-			<button class="btn btn-lg btn-block  btn-brown">Dungeons</button>
+			<button onclick="playTrack('dungeons')" class="btn btn-lg btn-block  btn-brown">Dungeons&nbsp;<span class="volume">0</span></button>
 		</div>
 		<div class="col-sm-4">
-			<button class="btn btn-lg btn-block  btn-success">Forest</button>
+			<button onclick="playTrack('forest')" class="btn btn-lg btn-block  btn-success">Forest&nbsp;<span class="volume">0</span></button>
 		</div>
 		<div class="col-sm-4">
-			<button class="btn btn-lg btn-block  btn-dark">Night</button>
+			<button onclick="playTrack('night')" class="btn btn-lg btn-block  btn-dark">Night&nbsp;<span class="volume">0</span></button>
 		</div>
 		<div class="col-sm-4">
-			<button class="btn btn-lg btn-block  btn-secondary">Rain</button>
+			<button onclick="playTrack('rain')" class="btn btn-lg btn-block  btn-secondary">Rain&nbsp;<span class="volume">0</span></button>
 		</div>
 		<div class="col-sm-4">
-			<button class="btn btn-lg btn-block  btn-magenta">Taverns</button>
+			<button onclick="playTrack('taverns')" class="btn btn-lg btn-block  btn-magenta">Taverns&nbsp;<span class="volume">0</span></button>
 		</div>
 		<div class="col-sm-4">
-			<button class="btn btn-lg btn-block  btn-warning">Towns</button>
+			<button onclick="playTrack('towns')" class="btn btn-lg btn-block  btn-warning">Towns&nbsp;<span class="volume">0</span></button>
 		</div>
 		<div class="col-sm-4">
-			<button class="btn btn-lg btn-block  btn-magenta">Taverns (busy)</button>
+			<button onclick="playTrack('taverns2')" class="btn btn-lg btn-block  btn-magenta">Taverns II&nbsp;<span class="volume">0</span></button>
 		</div>
 	</div>
 	
