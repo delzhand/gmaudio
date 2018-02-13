@@ -8,34 +8,65 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
-	<audio id="combatSound">
+<body class="container">
+	<audio loop id="combatSound">
 		<source src="data/DND/combat.ogg" preload="auto">
 	</audio>
-	<audio id="daySound">
+	<audio loop id="daySound">
 		<source src="data/DND/day.mp3" preload="auto">
 	</audio>
-	<audio id="nightSound">
+	<audio loop id="nightSound">
 		<source src="data/DND/dungeons.mp3" preload="auto">
 	</audio>
-	<audio id="forestSound">
+	<audio loop id="forestSound">
 		<source src="data/DND/forest.ogg" preload="auto">
 	</audio>
-	<audio id="nightSound">
+	<audio loop id="nightSound">
 		<source src="data/DND/night.mp3" preload="auto">
 	</audio>
-	<audio id="rainSound">
+	<audio loop id="rainSound">
 		<source src="data/DND/rain.mp3" preload="auto">
 	</audio>
-	<audio id="tavernsSound">
+	<audio loop id="tavernsSound">
 		<source src="data/DND/taverns.mp3" preload="auto">
 	</audio>
-	<audio id="taverns2Sound">
+	<audio loop id="taverns2Sound">
 		<source src="data/DND/taverns2.mp3" preload="auto">
 	</audio>
-	<audio id="townsSound">
+	<audio loop id="townsSound">
 		<source src="data/DND/towns.mp3" preload="auto">
 	</audio>
+
+	<div class="row">
+		<div class="col-sm-4">
+			<button class="btn btn-lg btn-block  btn-danger">Combat</button>
+		</div>
+		<div class="col-sm-4">
+			<button class="btn btn-lg btn-block  btn-info">Day</button>
+		</div>
+		<div class="col-sm-4">
+			<button class="btn btn-lg btn-block  btn-brown">Dungeons</button>
+		</div>
+		<div class="col-sm-4">
+			<button class="btn btn-lg btn-block  btn-success">Forest</button>
+		</div>
+		<div class="col-sm-4">
+			<button class="btn btn-lg btn-block  btn-dark">Night</button>
+		</div>
+		<div class="col-sm-4">
+			<button class="btn btn-lg btn-block  btn-secondary">Rain</button>
+		</div>
+		<div class="col-sm-4">
+			<button class="btn btn-lg btn-block  btn-magenta">Taverns</button>
+		</div>
+		<div class="col-sm-4">
+			<button class="btn btn-lg btn-block  btn-warning">Towns</button>
+		</div>
+		<div class="col-sm-4">
+			<button class="btn btn-lg btn-block  btn-magenta">Taverns (busy)</button>
+		</div>
+	</div>
+	
 
 	<script src="js/lib/jquery-3.2.1.min.js"></script>
 	<script src="js/main.js"></script>
