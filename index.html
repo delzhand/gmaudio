@@ -13,6 +13,9 @@
 	<audio loop id="combatSound">
 		<source src="data/DND/combat.ogg" preload="auto">
 	</audio>
+	<audio loop id="ritualSound">
+		<source src="data/DND/ritual.wav" preload="auto">
+	</audio>
 	<audio loop id="battleSound">
 		<source src="data/DND/battle.mp3" preload="auto">
 	</audio>
@@ -89,6 +92,11 @@
 		<div class="col-sm-3">
 			<button id="forestButton" onclick="playTrack('forest')" class="btn btn-lg btn-block  btn-success">Forest&nbsp;
 				<span id="forestVolume"></span>
+			</button>
+		</div>
+		<div class="col-sm-3">
+			<button id="ritualButton" onclick="playTrack('ritual')" class="btn btn-lg btn-block  btn-dark">Ritual&nbsp;
+				<span id="ritualVolume"></span>
 			</button>
 		</div>
 		<div class="col-sm-3">
