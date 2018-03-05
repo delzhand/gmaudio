@@ -63,8 +63,9 @@ function updateIcons(){
 /**
  * Starts to play the provided track, fades others
  * @param {Track} track 
+ * @param {Number} seconds to start at, undefined or -1 to start at currentPos
  */
-function playTrack(track){
+function playTrack(track, startPos){
     if(!playing){
         //If we are not playing yet, first play all tracks
         $('audio').each(function(index, track){ track.play();});
@@ -75,6 +76,9 @@ function playTrack(track){
     //Only allow the chosen one to play
     var chosenTrack = $('#' + track + "Sound").get(0);
     chosenTrack.targetVolume = 1;
+	if(startPos && startPos != -1){
+		chosenTrack.currentTime = startPos;
+	}
 }
 
 /**

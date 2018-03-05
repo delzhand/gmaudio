@@ -13,6 +13,9 @@
 	<audio loop id="combatSound">
 		<source src="data/DND/combat.ogg" preload="auto">
 	</audio>
+	<audio loop id="bossSound">
+		<source src="data/DND/boss.mp3" preload="auto">
+	</audio>
 	<audio loop id="ritualSound">
 		<source src="data/DND/ritual.wav" preload="auto">
 	</audio>
@@ -55,15 +58,21 @@
 			<h1 class="text-center">Background Audio</h1>
 		</div>
 		<div class="col-sm-3">
-			<button id="combatButton" onclick="playTrack('combat')" class="btn btn-lg btn-block  btn-danger">
+			<button id="combatButton" onclick="playTrack('combat', 0)" class="btn btn-lg btn-block  btn-danger">
 				Combat&nbsp;
 				<span id="combatVolume"></span>
 			</button>
 		</div>
 		<div class="col-sm-3">
-			<button id="battleButton" onclick="playTrack('battle')" class="btn btn-lg btn-block  btn-danger">
+			<button id="battleButton" onclick="playTrack('battle', 0)" class="btn btn-lg btn-block  btn-danger">
 				Battle&nbsp;
 				<span id="battleVolume"></span>
+			</button>
+		</div>
+		<div class="col-sm-3">
+			<button id="bossButton" onclick="playTrack('boss', 11)" class="btn btn-lg btn-block  btn-danger">
+				Boss&nbsp;
+				<span id="bossVolume"></span>
 			</button>
 		</div>
 		<div class="col-sm-3">
