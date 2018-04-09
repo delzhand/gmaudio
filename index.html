@@ -13,6 +13,21 @@
 	<audio loop id="combatSound">
 		<source src="data/DND/combat.ogg" preload="auto">
 	</audio>
+	<audio loop id="oceanSound">
+		<source src="data/DND/ocean.mp3" preload="auto">
+	</audio>
+	<audio loop id="boss2Sound">
+		<source src="data/DND/boss2.mp3" preload="auto">
+	</audio>
+	<audio loop id="shipSound">
+		<source src="data/DND/ship.mp3" preload="auto">
+	</audio>
+	<audio loop id="beachSound">
+		<source src="data/DND/beach.mp3" preload="auto">
+	</audio>
+	<audio loop id="jungleSound">
+		<source src="data/DND/jungle.mp3" preload="auto">
+	</audio>
 	<audio loop id="bossSound">
 		<source src="data/DND/boss.mp3" preload="auto">
 	</audio>
@@ -46,8 +61,8 @@
 	<audio loop id="tavernsSound">
 		<source src="data/DND/taverns.mp3" preload="auto">
 	</audio>
-	<audio loop id="taverns2Sound">
-		<source src="data/DND/taverns2.mp3" preload="auto">
+	<audio loop id="innsSound">
+		<source src="data/DND/inns.mp3" preload="auto">
 	</audio>
 	<audio loop id="townsSound">
 		<source src="data/DND/towns.mp3" preload="auto">
@@ -57,82 +72,109 @@
 		<div class="col-sm-12">
 			<h1 class="text-center">Background Audio</h1>
 		</div>
-		<div class="col-sm-3">
+		<div class="col-sm-2">
 			<button id="combatButton" onclick="playTrack('combat', 0)" class="btn btn-lg btn-block  btn-danger">
 				Combat&nbsp;
 				<span id="combatVolume"></span>
 			</button>
 		</div>
-		<div class="col-sm-3">
+		<div class="col-sm-2">
 			<button id="battleButton" onclick="playTrack('battle', 0)" class="btn btn-lg btn-block  btn-danger">
 				Battle&nbsp;
 				<span id="battleVolume"></span>
 			</button>
 		</div>
-		<div class="col-sm-3">
+		<div class="col-sm-2">
 			<button id="bossButton" onclick="playTrack('boss', 11)" class="btn btn-lg btn-block  btn-danger">
 				Boss&nbsp;
 				<span id="bossVolume"></span>
 			</button>
 		</div>
-		<div class="col-sm-3">
+		<div class="col-sm-2">
+			<button id="boss2Button" onclick="playTrack('boss2', 11)" class="btn btn-lg btn-block  btn-danger">
+				Boss II&nbsp;
+				<span id="boss2Volume"></span>
+			</button>
+		</div>
+		<div class="col-sm-2">
 			<button id="magicButton" onclick="playTrack('magic')" class="btn btn-lg btn-block  btn-magenta">
 				Magic&nbsp;
 				<span id="magicVolume"></span>
 			</button>
 		</div>
-		<div class="col-sm-3">
+		<div class="col-sm-2">
 			<button id="dayButton" onclick="playTrack('day')" class="btn btn-lg btn-block  btn-info">
 				Day&nbsp;
 				<span id="dayVolume"></span>
 			</button>
 		</div>
-		<div class="col-sm-3">
+		<div class="col-sm-2">
 			<button id="dungeonsButton" onclick="playTrack('dungeons')" class="btn btn-lg btn-block  btn-brown">Dungeons&nbsp;
 				<span id="dungeonsVolume"></span>
 			</button>
 		</div>
-		<div class="col-sm-3">
+		<div class="col-sm-2">
 			<button id="caveButton" onclick="playTrack('cave')" class="btn btn-lg btn-block  btn-brown">
 				Cave&nbsp;
 				<span id="caveVolume"></span>
 			</button>
 		</div>
-		<div class="col-sm-3">
+		<div class="col-sm-2">
 			<button id="forestButton" onclick="playTrack('forest')" class="btn btn-lg btn-block  btn-success">Forest&nbsp;
 				<span id="forestVolume"></span>
 			</button>
 		</div>
-		<div class="col-sm-3">
+		<div class="col-sm-2">
 			<button id="ritualButton" onclick="playTrack('ritual')" class="btn btn-lg btn-block  btn-dark">Ritual&nbsp;
 				<span id="ritualVolume"></span>
 			</button>
 		</div>
-		<div class="col-sm-3">
+		<div class="col-sm-2">
 			<button id="nightButton" onclick="playTrack('night')" class="btn btn-lg btn-block  btn-dark">Night&nbsp;
 				<span id="nightVolume"></span>
 			</button>
 		</div>
-		<div class="col-sm-3">
+		<div class="col-sm-2">
 			<button id="rainButton" onclick="playTrack('rain')" class="btn btn-lg btn-block  btn-secondary">Rain&nbsp;
 				<span id="rainVolume"></span>
 			</button>
 		</div>
-		<div class="col-sm-3">
+		<div class="col-sm-2">
+			<button id="jungleButton" onclick="playTrack('jungle')" class="btn btn-lg btn-block  btn-success">Jungle&nbsp;
+				<span id="jungleVolume"></span>
+			</button>
+		</div>
+		<div class="col-sm-2">
 			<button id="tavernsButton" onclick="playTrack('taverns')" class="btn btn-lg btn-block  btn-magenta">Taverns&nbsp;
 				<span id="tavernsVolume"></span>
 			</button>
 		</div>
-		<div class="col-sm-3">
+		<div class="col-sm-2">
+			<button id="innsButton" onclick="playTrack('inns')" class="btn btn-lg btn-block  btn-magenta">Inns&nbsp;
+				<span id="innsVolume"></span>
+			</button>
+		</div>
+		<div class="col-sm-2">
 			<button id="townsButton" onclick="playTrack('towns')" class="btn btn-lg btn-block  btn-warning">Towns&nbsp;
 				<span id="townsVolume"></span>
 			</button>
 		</div>
-		<div class="col-sm-3">
-			<button id="taverns2Button" onclick="playTrack('taverns2')" class="btn btn-lg btn-block  btn-magenta">Taverns II&nbsp;
-				<span id="taverns2Volume"></span>
+		<div class="col-sm-2">
+			<button id="beachButton" onclick="playTrack('beach')" class="btn btn-lg btn-block  btn-info">Beach&nbsp;
+				<span id="beachVolume"></span>
 			</button>
 		</div>
+		<div class="col-sm-2">
+			<button id="shipButton" onclick="playTrack('ship')" class="btn btn-lg btn-block  btn-info">Ship&nbsp;
+				<span id="shipVolume"></span>
+			</button>
+		</div>
+		<div class="col-sm-2">
+			<button id="oceanButton" onclick="playTrack('ocean')" class="btn btn-lg btn-block  btn-info">Ocean&nbsp;
+				<span id="oceanVolume"></span>
+			</button>
+		</div>
+		
 	</div>
 
 
