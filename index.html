@@ -10,6 +10,15 @@
 </head>
 
 <body class="container">
+	<audio loop id="swampSound">
+		<source src="data/DND/swamp.mp3" preload="auto">
+	</audio>
+	<audio loop id="quiet_tavernSound">
+		<source src="data/DND/quiet_tavern.mp3" preload="auto">
+	</audio>
+	<audio loop id="boss3Sound">
+		<source src="data/DND/boss3.mp3" preload="auto">
+	</audio>
 	<audio loop id="combatSound">
 		<source src="data/DND/combat.ogg" preload="auto">
 	</audio>
@@ -68,6 +77,21 @@
 		<source src="data/DND/towns.mp3" preload="auto">
 	</audio>
 
+	<div class="audioControls row">
+		<div class="col-sm-12">
+			<h1 class="text-center">Music Fade</h1>
+		</div>
+		<div class="col-sm-4">
+			<button class="btn btn-block btn-sm btn-secondary">Slow</button>
+		</div>
+		<div class="col-sm-4">
+			<button class="btn btn-block btn-sm btn-primary">Medium</button>
+		</div>
+		<div class="col-sm-4">
+			<button class="btn btn-block btn-sm btn-secondary">Fast</button>
+		</div>
+	</div>
+
 	<div class="row">
 		<div class="col-sm-12">
 			<h1 class="text-center">Background Audio</h1>
@@ -91,9 +115,15 @@
 			</button>
 		</div>
 		<div class="col-sm-2">
-			<button id="boss2Button" onclick="playTrack('boss2', 11)" class="btn btn-lg btn-block  btn-danger">
+			<button id="boss2Button" onclick="playTrack('boss2', 1)" class="btn btn-lg btn-block  btn-danger">
 				Boss II&nbsp;
 				<span id="boss2Volume"></span>
+			</button>
+		</div>
+		<div class="col-sm-2">
+			<button id="boss3Button" onclick="playTrack('boss3', 1)" class="btn btn-lg btn-block  btn-danger">
+				Boss III&nbsp;
+				<span id="boss3Volume"></span>
 			</button>
 		</div>
 		<div class="col-sm-2">
@@ -117,6 +147,12 @@
 			<button id="caveButton" onclick="playTrack('cave')" class="btn btn-lg btn-block  btn-brown">
 				Cave&nbsp;
 				<span id="caveVolume"></span>
+			</button>
+		</div>
+		<div class="col-sm-2">
+			<button id="swampButton" onclick="playTrack('swamp')" class="btn btn-lg btn-block  btn-brown">
+				Swamp&nbsp;
+				<span id="swampVolume"></span>
 			</button>
 		</div>
 		<div class="col-sm-2">
@@ -155,6 +191,11 @@
 			</button>
 		</div>
 		<div class="col-sm-2">
+			<button id="quiet_tavernButton" onclick="playTrack('quiet_tavern')" class="btn btn-lg btn-block  btn-magenta">Quiet Inn&nbsp;
+				<span id="quiet_tavernVolume"></span>
+			</button>
+		</div>
+		<div class="col-sm-2">
 			<button id="townsButton" onclick="playTrack('towns')" class="btn btn-lg btn-block  btn-warning">Towns&nbsp;
 				<span id="townsVolume"></span>
 			</button>
@@ -174,7 +215,7 @@
 				<span id="oceanVolume"></span>
 			</button>
 		</div>
-		
+
 	</div>
 
 
