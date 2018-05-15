@@ -13,6 +13,9 @@
 	<audio loop id="swampSound">
 		<source src="data/DND/swamp.mp3" preload="auto">
 	</audio>
+	<audio loop id="creepy_interiorSound">
+		<source src="data/DND/creepy_interior.mp3" preload="auto">
+	</audio>
 	<audio loop id="quiet_tavernSound">
 		<source src="data/DND/quiet_tavern.mp3" preload="auto">
 	</audio>
@@ -20,7 +23,7 @@
 		<source src="data/DND/boss3.mp3" preload="auto">
 	</audio>
 	<audio loop id="combatSound">
-		<source src="data/DND/combat.ogg" preload="auto">
+		<source src="data/DND/combat.mp3" preload="auto">
 	</audio>
 	<audio loop id="oceanSound">
 		<source src="data/DND/ocean.mp3" preload="auto">
@@ -41,7 +44,7 @@
 		<source src="data/DND/boss.mp3" preload="auto">
 	</audio>
 	<audio loop id="ritualSound">
-		<source src="data/DND/ritual.wav" preload="auto">
+		<source src="data/DND/ritual.mp3" preload="auto">
 	</audio>
 	<audio loop id="battleSound">
 		<source src="data/DND/battle.mp3" preload="auto">
@@ -56,7 +59,7 @@
 		<source src="data/DND/dungeons.mp3" preload="auto">
 	</audio>
 	<audio loop id="forestSound">
-		<source src="data/DND/forest.ogg" preload="auto">
+		<source src="data/DND/forest.mp3" preload="auto">
 	</audio>
 	<audio loop id="magicSound">
 		<source src="data/DND/magic.mp3" preload="auto">
@@ -158,6 +161,11 @@
 		<div class="col-sm-2">
 			<button id="forestButton" onclick="playTrack('forest')" class="btn btn-lg btn-block  btn-success">Forest&nbsp;
 				<span id="forestVolume"></span>
+			</button>
+		</div>
+		<div class="col-sm-2">
+			<button id="creepy_interiorButton" onclick="playTrack('creepy_interior')" class="btn btn-lg btn-block  btn-dark">Interior&nbsp;
+				<span id="creepy_interiorVolume"></span>
 			</button>
 		</div>
 		<div class="col-sm-2">
