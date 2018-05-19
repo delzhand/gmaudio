@@ -80,6 +80,11 @@ function parseTrackData(){
     //Now add all the HTML to the DOM
     $('#audioHolder').html(audioHTML);
     $('#buttonHolder').html(buttonHTML);
+
+    //With the HTML added to the DOM we can finally make the BG color adjustments
+    $.each(tracks, function(index, track){
+        $('#' + track.id + "Button").attr('style', 'background-color:' + track.backgroundColor + ';');
+    });
 }
 
 /**
