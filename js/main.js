@@ -12,9 +12,21 @@ var FAST_FADE = 0.25;
  * Entry point
  */
 $(document).ready(function(){
+    //First parse the track data
+    parseTrackData();
+
+    //Then prepare to start
     init();
     setInterval(update, 100);
 });
+
+/**
+ * Starts loading the track data from the hidden embedded iframe
+ */
+function parseTrackData(){
+    var data = $('#tracks').html();
+    console.log(data);
+}
 
 /**
  * Called to reset all audio parameters and be ready to start
@@ -117,4 +129,11 @@ function playTrack(track, startPos){
  */
 function constrain(val, min, max){
     return Math.max(Math.min(max, val), min);
+}
+
+/**
+ * Set up the handler of the data loading
+ */
+window.onmessage = function(event){
+    console.log(event.data);
 }

@@ -49,3 +49,7 @@ span{
     font-size: 0.5em;
     color: black;
 }
+
+#tracks{
+    display: none;
+}
