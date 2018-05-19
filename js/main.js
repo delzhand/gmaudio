@@ -3,6 +3,11 @@
 /***If we are currently playing any audio. Set to false in init */
 var playing = false;
 
+/**The different fade speeds, before they are overwritten by the settings INI */
+var SLOW_FADE = 0.03;
+var MED_FADE = 0.1;
+var FAST_FADE = 0.25;
+
 /**
  * Entry point
  */
@@ -22,13 +27,39 @@ function init(){
         track.targetVolume = 0;
         playing = false;
     });
+
+    //Re-set the handler for the fadeButtons
+    $('.fadeButton').unbind('click').click(function(){
+        //What to do on a click, first remove any selection made visible
+        $('.fadeButton').removeClass('btn-primary btn-secondary').addClass('btn-secondary');
+        //Then make the new button primary button
+        $(this).addClass('btn-primary').removeClass('btn-secondary');
+
+        //Now determine which button was clicked
+        switch($(this).attr('id')){
+            case 'slowFade':
+                volumeEaseFactor = SLOW_FADE;
+            break;
+            case 'fastFade':
+                volumeEaseFacto = FAST_FADE;
+            break;
+            case 'mediumFade':
+                volumeEaseFactor = MED_FADE;
+            default:
+            break;
+        }
+    });
 }
 
 var noVolume = '<i class="fas fa-volume-off"></i>';
 var halfVolume = '<i class="fas fa-volume-down"></i>';
 var fullVolume = '<i class="fas fa-volume-up"></i>';
 
+//Used to handle animation frames, the FPS of animations is waay below the FPS for audio fades. (a 1/3 to be exact);
 var frameCounter = 0;
+
+/**The default volume ease factor is 0.1, this is a medium fade */
+var volumeEaseFactor = MED_FADE;
 
 /**
  * Update handler, will handle audio automation animation and easing
@@ -36,8 +67,8 @@ var frameCounter = 0;
 function update(){
     $('audio').each(function(index, track){
         var diff = track.targetVolume - track.volume;
-        if(Math.abs(diff) < 0.1) track.volume = track.targetVolume;
-        track.volume = constrain(track.volume + diff * 0.1, 0, 1);
+        if(Math.abs(diff) < 0.01) track.volume = track.targetVolume;
+        track.volume = constrain(track.volume + diff * volumeEaseFactor, 0, 1);
     });
     frameCounter ++;
     if(frameCounter > 1){
