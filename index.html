@@ -7,6 +7,7 @@
 	is not something you should ever need to touch. Just ignore	it.
 	===============================================================
 -->
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,14 +18,14 @@
 
 <body class="container">
 
-<!-- 
+	<!-- 
 	================================================================
 	BELOW IS THE TRACK DATA YOU NEED TO EDIT,
 	please remain within the <pre id="tracks"> and the </pre> tags,
 	ignore the rest of the code, unless you now what you are doing.
 	================================================================
 -->
-<pre id="tracks">
+	<pre id="tracks">
 #dc3545, Combat, combat.mp3, 0
 #dc3545, Battle, battle.mp3, 0
 #dc3545, Boss, boss.mp3, 0
@@ -36,7 +37,7 @@
 #744406, Cave, cave.mp3, -1
 #744406, Swamp, swamp.mp3, -1
 #28a745, Forest, forest.mp3, -1
-#343a40, Interior, interior.mp3, -1
+#343a40, Interior, creepy_interior.mp3, -1
 #343a40, Ritual, ritual.mp3, -1
 #343a40, Night, night.mp3, -1
 #868e96, Rain, rain.mp3, -1
@@ -50,7 +51,7 @@
 #17a2b8, Ocean, ocean.mp3, -1
 </pre>
 
-<!--
+	<!--
 	======================================================
 	YOU CAN SAFELY IGNORE ANYTHING BELOW
 	Below you will find only HTML code and script embeds,
@@ -58,76 +59,8 @@
 	to mess with it, go ahead, but do so at you own risk!
 	=======================================================
 -->
-
-	<audio loop id="swampSound">
-		<source src="data/DND/swamp.mp3" preload="auto">
-	</audio>
-	<audio loop id="creepy_interiorSound">
-		<source src="data/DND/creepy_interior.mp3" preload="auto">
-	</audio>
-	<audio loop id="quiet_tavernSound">
-		<source src="data/DND/quiet_tavern.mp3" preload="auto">
-	</audio>
-	<audio loop id="boss3Sound">
-		<source src="data/DND/boss3.mp3" preload="auto">
-	</audio>
-	<audio loop id="combatSound">
-		<source src="data/DND/combat.mp3" preload="auto">
-	</audio>
-	<audio loop id="oceanSound">
-		<source src="data/DND/ocean.mp3" preload="auto">
-	</audio>
-	<audio loop id="boss2Sound">
-		<source src="data/DND/boss2.mp3" preload="auto">
-	</audio>
-	<audio loop id="shipSound">
-		<source src="data/DND/ship.mp3" preload="auto">
-	</audio>
-	<audio loop id="beachSound">
-		<source src="data/DND/beach.mp3" preload="auto">
-	</audio>
-	<audio loop id="jungleSound">
-		<source src="data/DND/jungle.mp3" preload="auto">
-	</audio>
-	<audio loop id="bossSound">
-		<source src="data/DND/boss.mp3" preload="auto">
-	</audio>
-	<audio loop id="ritualSound">
-		<source src="data/DND/ritual.mp3" preload="auto">
-	</audio>
-	<audio loop id="battleSound">
-		<source src="data/DND/battle.mp3" preload="auto">
-	</audio>
-	<audio loop id="caveSound">
-		<source src="data/DND/cave.mp3" preload="auto">
-	</audio>
-	<audio loop id="daySound">
-		<source src="data/DND/day.mp3" preload="auto">
-	</audio>
-	<audio loop id="dungeonsSound">
-		<source src="data/DND/dungeons.mp3" preload="auto">
-	</audio>
-	<audio loop id="forestSound">
-		<source src="data/DND/forest.mp3" preload="auto">
-	</audio>
-	<audio loop id="magicSound">
-		<source src="data/DND/magic.mp3" preload="auto">
-	</audio>
-	<audio loop id="nightSound">
-		<source src="data/DND/night.mp3" preload="auto">
-	</audio>
-	<audio loop id="rainSound">
-		<source src="data/DND/rain.mp3" preload="auto">
-	</audio>
-	<audio loop id="tavernsSound">
-		<source src="data/DND/taverns.mp3" preload="auto">
-	</audio>
-	<audio loop id="innsSound">
-		<source src="data/DND/inns.mp3" preload="auto">
-	</audio>
-	<audio loop id="townsSound">
-		<source src="data/DND/towns.mp3" preload="auto">
-	</audio>
+	<div id="audioHolder">
+	</div>
 
 	<div class="audioControls row">
 		<div class="col-sm-12">
@@ -144,135 +77,23 @@
 		</div>
 	</div>
 
-	<div class="row">
+	<div id="buttonHolder" class="row">
 		<div class="col-sm-12">
 			<h1 class="text-center">Background Audio</h1>
 		</div>
-		<div class="col-sm-2">
-			<button id="combatButton" onclick="playTrack('combat', 0)" class="btn btn-lg btn-block  btn-danger">
-				Combat&nbsp;
-				<span id="combatVolume"></span>
-			</button>
-		</div>
-		<div class="col-sm-2">
-			<button id="battleButton" onclick="playTrack('battle', 0)" class="btn btn-lg btn-block  btn-danger">
-				Battle&nbsp;
-				<span id="battleVolume"></span>
-			</button>
-		</div>
-		<div class="col-sm-2">
-			<button id="bossButton" onclick="playTrack('boss', 11)" class="btn btn-lg btn-block  btn-danger">
-				Boss&nbsp;
-				<span id="bossVolume"></span>
-			</button>
-		</div>
-		<div class="col-sm-2">
-			<button id="boss2Button" onclick="playTrack('boss2', 1)" class="btn btn-lg btn-block  btn-danger">
-				Boss II&nbsp;
-				<span id="boss2Volume"></span>
-			</button>
-		</div>
-		<div class="col-sm-2">
-			<button id="boss3Button" onclick="playTrack('boss3', 1)" class="btn btn-lg btn-block  btn-danger">
-				Boss III&nbsp;
-				<span id="boss3Volume"></span>
-			</button>
-		</div>
-		<div class="col-sm-2">
-			<button id="magicButton" onclick="playTrack('magic')" class="btn btn-lg btn-block  btn-magenta">
-				Magic&nbsp;
-				<span id="magicVolume"></span>
-			</button>
-		</div>
-		<div class="col-sm-2">
-			<button id="dayButton" onclick="playTrack('day')" class="btn btn-lg btn-block  btn-info">
-				Day&nbsp;
-				<span id="dayVolume"></span>
-			</button>
-		</div>
-		<div class="col-sm-2">
-			<button id="dungeonsButton" onclick="playTrack('dungeons')" class="btn btn-lg btn-block  btn-brown">Dungeons&nbsp;
-				<span id="dungeonsVolume"></span>
-			</button>
-		</div>
-		<div class="col-sm-2">
-			<button id="caveButton" onclick="playTrack('cave')" class="btn btn-lg btn-block  btn-brown">
-				Cave&nbsp;
-				<span id="caveVolume"></span>
-			</button>
-		</div>
-		<div class="col-sm-2">
-			<button id="swampButton" onclick="playTrack('swamp')" class="btn btn-lg btn-block  btn-brown">
-				Swamp&nbsp;
-				<span id="swampVolume"></span>
-			</button>
-		</div>
-		<div class="col-sm-2">
-			<button id="forestButton" onclick="playTrack('forest')" class="btn btn-lg btn-block  btn-success">Forest&nbsp;
-				<span id="forestVolume"></span>
-			</button>
-		</div>
-		<div class="col-sm-2">
-			<button id="creepy_interiorButton" onclick="playTrack('creepy_interior')" class="btn btn-lg btn-block  btn-dark">Interior&nbsp;
-				<span id="creepy_interiorVolume"></span>
-			</button>
-		</div>
-		<div class="col-sm-2">
-			<button id="ritualButton" onclick="playTrack('ritual')" class="btn btn-lg btn-block  btn-dark">Ritual&nbsp;
-				<span id="ritualVolume"></span>
-			</button>
-		</div>
-		<div class="col-sm-2">
-			<button id="nightButton" onclick="playTrack('night')" class="btn btn-lg btn-block  btn-dark">Night&nbsp;
-				<span id="nightVolume"></span>
-			</button>
-		</div>
-		<div class="col-sm-2">
-			<button id="rainButton" onclick="playTrack('rain')" class="btn btn-lg btn-block  btn-secondary">Rain&nbsp;
-				<span id="rainVolume"></span>
-			</button>
-		</div>
-		<div class="col-sm-2">
-			<button id="jungleButton" onclick="playTrack('jungle')" class="btn btn-lg btn-block  btn-success">Jungle&nbsp;
-				<span id="jungleVolume"></span>
-			</button>
-		</div>
-		<div class="col-sm-2">
-			<button id="tavernsButton" onclick="playTrack('taverns')" class="btn btn-lg btn-block  btn-magenta">Taverns&nbsp;
-				<span id="tavernsVolume"></span>
-			</button>
-		</div>
-		<div class="col-sm-2">
-			<button id="innsButton" onclick="playTrack('inns')" class="btn btn-lg btn-block  btn-magenta">Inns&nbsp;
-				<span id="innsVolume"></span>
-			</button>
-		</div>
-		<div class="col-sm-2">
-			<button id="quiet_tavernButton" onclick="playTrack('quiet_tavern')" class="btn btn-lg btn-block  btn-magenta">Quiet Inn&nbsp;
-				<span id="quiet_tavernVolume"></span>
-			</button>
-		</div>
-		<div class="col-sm-2">
-			<button id="townsButton" onclick="playTrack('towns')" class="btn btn-lg btn-block  btn-warning">Towns&nbsp;
-				<span id="townsVolume"></span>
-			</button>
-		</div>
-		<div class="col-sm-2">
-			<button id="beachButton" onclick="playTrack('beach')" class="btn btn-lg btn-block  btn-info">Beach&nbsp;
-				<span id="beachVolume"></span>
-			</button>
-		</div>
-		<div class="col-sm-2">
-			<button id="shipButton" onclick="playTrack('ship')" class="btn btn-lg btn-block  btn-info">Ship&nbsp;
-				<span id="shipVolume"></span>
-			</button>
-		</div>
-		<div class="col-sm-2">
-			<button id="oceanButton" onclick="playTrack('ocean')" class="btn btn-lg btn-block  btn-info">Ocean&nbsp;
-				<span id="oceanVolume"></span>
-			</button>
-		</div>
+	</div>
 
+	<div id="audioTemplate" style="display: none;">
+		<audio loop id="%ID%Sound">
+			<source file="data/%FILE%" preload="auto">
+		</audio>
+	</div>
+	<div id="buttonTemplate" style="display: none;">
+		<div class="col-sm-2">
+			<button id="%ID%Button" onclick="playTrack('%ID%', %START%)" class="btn btn-lg btn-block">%TITLE%&nbsp;
+				<span id="%ID%Volume"></span>
+			</button>
+		</div>
 	</div>
 	<script src="js/lib/jquery-3.2.1.min.js"></script>
 	<script src="js/main.js"></script>

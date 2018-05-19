@@ -8,10 +8,20 @@ var SLOW_FADE = 0.03;
 var MED_FADE = 0.1;
 var FAST_FADE = 0.25;
 
+/**The component Templates */
+var audioTemplate = "";
+var buttonTemplate = "";
+
 /**
  * Entry point
  */
 $(document).ready(function(){
+    //Initially, read the two templates into memore
+    audioTemplate = $('#audioTemplate').html();
+    $('#audioTemplate').remove();
+    buttonTemplate = $('#buttonTemplate').html();
+    $('#buttonTemplate').remove();
+
     //First parse the track data
     parseTrackData();
 
@@ -20,12 +30,56 @@ $(document).ready(function(){
     setInterval(update, 100);
 });
 
+/**List of tracks */
+var tracks = [];
 /**
  * Starts loading the track data from the hidden embedded iframe
  */
 function parseTrackData(){
+    //Read the data and split the lines, every line is a track
     var data = $('#tracks').html();
-    console.log(data);
+    var lines = data.split("\n");
+
+    //Now go through every line and create a track object
+    $.each(lines, function(index, line){
+        if(line.length < 4) return; //Ignore, not long enough to matter
+        if(line.indexOf(',') == -1) return;//Ignore, no comma's in this line
+        if(line.indexOf('//') == 0) return;//Ignore, this line is a comment
+
+        //Split the lines into parts and count the parts
+        var parts = line.split(',');
+        if(parts.length != 4) return;//Ignore, not enough parts
+
+        //Now start reading the parts
+        var track = {};
+        track.backgroundColor = parts[0].trim();
+        track.title = parts[1].trim();
+        track.file = parts[2].trim();
+        track.start = Number(parts[3].trim());
+        track.id = track.file.replace(/.mp3/g, '').replace(/.wav/g, '').replace(/.ogg/g, '').replace(/.wma/g, '');
+        //And push it to the list of tracks
+        tracks.push(track);
+    });
+
+    //Make all the necessary HTML ellemtns for all the tracks
+    var audioHTML = "";
+    var buttonHTML = "";
+    $.each(tracks, function(index, track){
+        //Create the audioTrack element and add it to the HTML
+        var audioTrack = audioTemplate.replace(/%ID%/g, track.id);
+        audioTrack = audioTrack.replace(/%FILE%/g, track.file);
+        audioTrack = audioTrack.replace('source file="', 'source src="');
+        audioHTML += audioTrack;
+
+        //Create the button element and add it to the HTML
+        var button = buttonTemplate.replace(/%ID%/g, track.id);
+        button = button.replace(/%TITLE%/g, track.title);
+        button = button.replace(/%START%/g, track.start);
+        buttonHTML += button;
+    });
+    //Now add all the HTML to the DOM
+    $('#audioHolder').html(audioHTML);
+    $('#buttonHolder').html(buttonHTML);
 }
 
 /**
