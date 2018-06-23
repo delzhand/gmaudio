@@ -61,7 +61,7 @@ function parseTrackData(){
         tracks.push(track);
     });
 
-    //Make all the necessary HTML ellemtns for all the tracks
+    //Make all the necessary HTML elements for all the tracks
     var audioHTML = "";
     var buttonHTML = "";
     $.each(tracks, function(index, track){
@@ -167,7 +167,7 @@ function updateIcons(){
  * @param {Track} track 
  * @param {Number} seconds to start at, undefined or -1 to start at currentPos
  */
-function playTrack(track, startPos){
+function crossfadeTrack(track, startPos){
     if(!playing){
         //If we are not playing yet, first play all tracks
         $('audio').each(function(index, track){ track.play();});
@@ -178,9 +178,40 @@ function playTrack(track, startPos){
     //Only allow the chosen one to play
     var chosenTrack = $('#' + track + "Sound").get(0);
     chosenTrack.targetVolume = 1;
-	if(startPos && startPos != -1){
-		chosenTrack.currentTime = startPos;
-	}
+
+    // Set to medium fade
+    volumeEaseFactor = MED_FADE;
+}
+
+/**
+ * Starts to play the provided track from the beginning, fades others out quickly
+ * @param {Track} track 
+ * @param {Number} seconds to start at, undefined or -1 to start at currentPos
+ */
+function startTrack(track, startPos){
+    if(!playing){
+        //If we are not playing yet, first play all tracks
+        $('audio').each(function(index, track){ track.play();});
+    }
+    //Now set all targetVolumes to 0
+    $('audio').each(function(index, track){ track.targetVolume = 0;});
+
+    //Only allow the chosen one to play
+    var chosenTrack = $('#' + track + "Sound").get(0);
+    chosenTrack.targetVolume = 1;
+    chosenTrack.currentTime = 0;
+    
+    // Set to fast fade
+    volumeEaseFactor = FAST_FADE;
+}
+
+/**
+ * Starts to play the provided track from the beginning, fades others out quickly
+ * @param {Track} track 
+ * @param {Number} seconds to start at, undefined or -1 to start at currentPos
+ */
+function stopTrack(){
+    $('audio').each(function(index, track){ track.targetVolume = 0;});
 }
 
 /**

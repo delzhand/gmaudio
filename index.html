@@ -26,29 +26,12 @@
 	================================================================
 -->
 <pre id="tracks">
-#dc3545, Combat, combat.mp3, 0
-#dc3545, Battle, battle.mp3, 0
-#dc3545, Boss, boss.mp3, 0
-#dc3545, Boss II, boss2.mp3, 0
-#dc3545, Boss III, boss3.mp3, 1
-#bf29c6, Magic, magic.mp3, -1
-#17a2b8, Day, day.mp3, -1
-#744406, Dungeon, dungeon.mp3, -1
-#744406, Cave, cave.mp3, -1
-#744406, Swamp, swamp.mp3, -1
-#28a745, Forest, forest.mp3, -1
-#343a40, Interior, creepy_interior.mp3, -1
-#343a40, Ritual, ritual.mp3, -1
-#343a40, Night, night.mp3, -1
-#868e96, Rain, rain.mp3, -1
-#28a745, Jungle, jungle.mp3, -1
-#bf29c6, Taverns, taverns.mp3, -1
-#bf29c6, Inns, inns.mp3, -1
-#bf29c6, Quiet Inn, quiet_tavern.mp3, -1
-#ffc107, Towns, towns.mp3, -1
-#17a2b8, Beach, beach.mp3, -1
-#17a2b8, Ship, ship.mp3, -1
-#17a2b8, Ocean, ocean.mp3, -1
+#dc3545, Commander (FFT), commander.mp3, 0
+#dc3545, Labyrinth City 2 (OS), labyrinthcity2.mp3, -1
+#dc3545, Rebellion (OS), rebellion.mp3, 0
+#dc3545, Trial (OS), trial.mp3, -1
+#dc3545, Labyrinth City (OS), labyrinthcity.mp3, 0
+#bf29c6, Victory (OS), victory.mp3, -1
 </pre>
 
 	<!--
@@ -62,37 +45,27 @@
 	<div id="audioHolder">
 	</div>
 
-	<div class="audioControls row">
-		<div class="col-sm-12">
-			<h1 class="text-center">Music Fade</h1>
-		</div>
-		<div class="col-sm-4">
-			<button id="slowFade" class="btn btn-block btn-sm btn-secondary fadeButton">Slow</button>
-		</div>
-		<div class="col-sm-4">
-			<button id="mediumFade" class="btn btn-block btn-sm btn-primary fadeButton">Medium</button>
-		</div>
-		<div class="col-sm-4">
-			<button id="fastFade" class="btn btn-block btn-sm btn-secondary fadeButton">Fast</button>
-		</div>
-	</div>
-
-	<div id="buttonHolder" class="row">
+	<div id="buttonHolder" class="row mt-2">
 		<div class="col-sm-12">
 			<h1 class="text-center">Background Audio</h1>
 		</div>
 	</div>
 
-	<div id="audioTemplate" style="display: none;">
-		<audio loop id="%ID%Sound">
-			<source file="data/%FILE%" preload="auto">
-		</audio>
-	</div>
-	<div id="buttonTemplate" style="display: none;">
-		<div class="col-sm-2">
-			<button id="%ID%Button" onclick="playTrack('%ID%', %START%)" class="btn btn-lg btn-block">%TITLE%&nbsp;
-				<span id="%ID%Volume"></span>
-			</button>
+  <div class="row">
+		<div id="audioTemplate" style="display: none;">
+			<audio loop id="%ID%Sound">
+				<source file="data/%FILE%" preload="auto">
+			</audio>
+		</div>
+		<div id="buttonTemplate" style="display: none;">
+			<div class="col-6 border-bottom mb-2 pb-2">
+				%TITLE%&nbsp;<span id="%ID%Volume"></span>
+			</div>
+			<div class="col-6 border-bottom mb-2 pb-2 text-right">
+				<button onclick="crossfadeTrack('%ID%', %START%)" class="btn btn-sm">Crossfade</button>
+				<button onclick="startTrack('%ID%')" class="btn btn-sm">Start</button>
+				<button onclick="stopTrack()" class="btn btn-sm">Stop</button>
+			</div>
 		</div>
 	</div>
 	<script src="js/lib/jquery-3.2.1.min.js"></script>
